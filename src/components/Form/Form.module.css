@@ -1,0 +1,31 @@
+.formWrapper {
+  outline: solid rgb(151, 176, 176);
+}
+
+.form {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px 80px 10px 10px;
+  border: solid 2px rgb(37, 39, 39);
+  border-radius: 5px;
+}
+
+.formLable {
+  display: flex;
+  flex-direction: column;
+}
+
+.formInput {
+  border-radius: 3px;
+  border: solid 1px rgb(37, 39, 39);
+  padding: 5px 0;
+}
+
+.formBtn {
+  width: 110px;
+  padding: 5px 0;
+  border-radius: 5px;
+  border: solid 1px rgb(37, 39, 39);
+  background-color: rgb(98, 172, 172);
+}

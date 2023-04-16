@@ -1,0 +1,9 @@
+.filter {
+  padding-left: 10px;
+}
+
+.filterInput {
+  border-radius: 3px;
+  border: solid 1px rgb(37, 39, 39);
+  padding: 5px 0;
+}
