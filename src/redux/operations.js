@@ -24,7 +24,7 @@ export const addContacts = createAsyncThunk(
       const response = await axios.post(`/contacts`, { name, number });
       // setAuthHeader(response.data.token);
       toast.success('Add contact');
-      return response.data;
+      return await response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
@@ -37,7 +37,7 @@ export const delContact = createAsyncThunk(
     try {
       const response = await axios.delete(`/contacts/${id}`);
       toast.error('Contact was delete!');
-      return response.data;
+      return await response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }

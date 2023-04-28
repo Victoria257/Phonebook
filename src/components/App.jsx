@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
 import { Home } from 'pages/Home';
 import { Register } from 'pages/Register';
@@ -17,7 +16,6 @@ function App() {
   const useRefreshing = useSelector(state => state.auth.useRefreshing);
   useEffect(() => {
     dispatch(refreshUser());
-    dispatch(fetchContacts());
   }, [dispatch]);
 
   return useRefreshing ? (
