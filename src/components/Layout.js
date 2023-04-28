@@ -20,16 +20,14 @@ export const Layout = () => {
   );
 };
 
-{
-  /* //  <header className={css.header}>
+/* //  <header className={css.header}>
 //    <nav>
 //      <NavLink className={css.link} to="/">
 //        Home
 //      </NavLink>
 //      {isLoggedIn && ( */
-}
-{
-  /* //        <NavLink className={css.link} to="/tasks">
+
+/* //        <NavLink className={css.link} to="/tasks">
 //          Tasks
 //        </NavLink>
 //      )}
@@ -49,4 +47,3 @@ export const Layout = () => {
 //      </NavLink>
 //    </div>
 //  </header>; */
-}
