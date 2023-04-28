@@ -31,7 +31,9 @@ export const Login = () => {
   };
 
   return isLoggedIn ? (
-    <div>Привіт, {loggedName}!</div>
+    <div>
+      <div>Привіт, {loggedName}!</div>
+    </div>
   ) : (
     <div>
       <form onSubmit={handleSubmit}>

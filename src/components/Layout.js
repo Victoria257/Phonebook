@@ -11,6 +11,7 @@ export const Layout = () => {
         <NavLink to="/register">Register</NavLink>
         <NavLink to="/login">Log In</NavLink>
         <NavLink to="/contacts">Contacts</NavLink>
+        <NavLink to="/logout">Log out</NavLink>
       </nav>
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
