@@ -2,14 +2,23 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-hot-toast';
 
-const URL = 'https://642fd67cb289b1dec4bb2a03.mockapi.io/contacts';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+// const setAuthHeader = token => {
+//   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+// };
+
+// const clearAuthHeader = () => {
+//   axios.defaults.headers.common.Authorization = '';
+// };
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get(URL);
-      return response.data;
+      const response = await axios.get(`/contacts`);
+      console.log(response.data);
+      // setAuthHeader(response.data.token);
+      return await response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
@@ -18,9 +27,10 @@ export const fetchContacts = createAsyncThunk(
 
 export const addContacts = createAsyncThunk(
   'contacts/addContact',
-  async ({ name, phone }, thunkAPI) => {
+  async ({ name, number }, thunkAPI) => {
     try {
-      const response = await axios.post(URL, { name, phone });
+      const response = await axios.post(`/contacts`, { name, number });
+      // setAuthHeader(response.data.token);
       toast.success('Add contact');
       return response.data;
     } catch (error) {
@@ -32,12 +42,12 @@ export const addContacts = createAsyncThunk(
 export const delContact = createAsyncThunk(
   'contacts/deleteContact',
   async (id, thunkAPI) => {
-    try {
-      const response = await axios.delete(`${URL}/${id}`);
-      toast.error('Contact was delete!');
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error);
-    }
+    // try {
+    //   const response = await axios.delete(`/contacts/${id}`);
+    //   toast.error('Contact was delete!');
+    //   return response.data;
+    // } catch (error) {
+    //   return thunkAPI.rejectWithValue(error);
+    // }
   }
 );

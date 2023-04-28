@@ -1,15 +1,15 @@
-import { Form } from 'components/Form/Form';
-import ContactList from 'components/ContactList/ContactList';
-import FilterContacts from './FilterContacts/FilterContacts';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
-import { Toaster } from 'react-hot-toast';
+import { Home } from 'pages/Home';
+import { Register } from 'pages/Register';
+import { Login } from 'pages/Login';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './Layout';
+import { Contacts } from 'pages/PageContacts';
 
 function App() {
   const dispatch = useDispatch();
-  // const isLoading = state => state.contacts.isLoading;
-  // const error = state => state.contacts.error;
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -17,14 +17,14 @@ function App() {
 
   return (
     <div>
-      <div>
-        <Toaster position="top-right" reverseOrder={true} />
-      </div>
-      <Form />
-      <ContactList>
-        <FilterContacts />
-        {/* {isLoading && !error && <b>Request in progress...</b>} */}
-      </ContactList>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+          <Route path="contacts" element={<Contacts />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

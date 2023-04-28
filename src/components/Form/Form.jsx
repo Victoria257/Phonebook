@@ -27,8 +27,8 @@ export function Form() {
   const handleSubmit = event => {
     event.preventDefault();
 
-    const name = event.target.name.value;
-    const phone = event.target.elements.number.value;
+    const nameNew = event.target.name.value;
+    const numberNew = event.target.elements.number.value;
 
     if (
       [...contacts].find(contact =>
@@ -38,7 +38,7 @@ export function Form() {
       alert(`${name} is already in contacts`);
       return;
     } else {
-      dispatch(addContacts({ name, phone }));
+      dispatch(addContacts({ name: nameNew, number: numberNew }));
       reset();
     }
   };
