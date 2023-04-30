@@ -21,7 +21,7 @@ export const Contact = () => {
       <ul className={css.list}>
         <li>{name}</li>
         <li>
-          <a href={number} target="_blank">
+          <a href={number} target="_blank" rel="noreferrer">
             {number}
           </a>
         </li>

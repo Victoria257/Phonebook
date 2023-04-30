@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  justify-content: start;
+  justify-content: left;
   gap: 30px;
   padding: 40px;
 }
