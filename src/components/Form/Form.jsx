@@ -50,7 +50,7 @@ export function Form() {
 
   return (
     <div className={css.formWrapper}>
-      <h1>Phonebook</h1>
+      <h2>Phonebook</h2>
       <form className={css.form} onSubmit={handleSubmit}>
         <label className={css.formLable}>
           Name

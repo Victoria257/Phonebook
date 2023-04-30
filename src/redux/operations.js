@@ -12,8 +12,19 @@ export const fetchContacts = createAsyncThunk(
       console.log(response.data);
       return await response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error);
+      return thunkAPI.rejectWithValue(thunkAPI.serializeError(error));
     }
+  },
+  {
+    serializeError: error => {
+      const {
+        message,
+        name,
+        stack,
+        response: { status, statusText } = {},
+      } = error;
+      return { message, name, stack, status, statusText };
+    },
   }
 );
 

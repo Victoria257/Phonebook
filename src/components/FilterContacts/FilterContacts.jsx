@@ -15,6 +15,7 @@ const FilterContacts = () => {
         className={css.filterInput}
         type="text"
         name="text"
+        placeholder="Enter a name"
         value={filter}
         onChange={onChange}
         title="Name may contain only letters, apostrophe, dash and spaces."

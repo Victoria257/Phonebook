@@ -8,17 +8,19 @@ import { Layout } from './Layout';
 import { Contacts } from 'pages/PageContacts';
 import { refreshUser } from 'redux/auth/authOperations';
 import { RestrictedRoute } from './RestrictedRout';
-import { Logout } from 'pages/Logout';
+import { PrivateRoute } from './PrivateRoute';
 
 function App() {
   const dispatch = useDispatch();
 
-  const useRefreshing = useSelector(state => state.auth.useRefreshing);
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
+  const isRefreshing = useSelector(state => state.auth.isRefreshing);
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
-  return useRefreshing ? (
+  useEffect(() => {
+    isLoggedIn && dispatch(refreshUser());
+  }, [dispatch, isLoggedIn]);
+
+  return isRefreshing ? (
     'Fetching user data...'
   ) : (
     <div>
@@ -37,8 +39,10 @@ function App() {
               <RestrictedRoute component={Login} redirectTo="/contacts" />
             }
           />
-          <Route path="logout" element={<Logout />} />
-          <Route path="contacts" element={<Contacts />} />
+          <Route
+            path="contacts"
+            element={<PrivateRoute component={Contacts} redirectTo="/login" />}
+          />
         </Route>
       </Routes>
     </div>

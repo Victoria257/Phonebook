@@ -1,0 +1,29 @@
+.navigation {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.navigation a {
+  width: 100%;
+  justify-content: right;
+  text-decoration: none;
+  color: currentColor;
+}
+
+.navigation a:first-child {
+  justify-content: start;
+}
+.navigation a:nth-child(2),
+.navigation a:nth-child(3) {
+  width: fit-content;
+}
+
+.navigation button {
+  padding: 7px 0;
+  width: 140px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(141, 179, 179);
+}

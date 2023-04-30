@@ -1,17 +1,45 @@
 import { Toaster } from 'react-hot-toast';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { LogOut, clearAuthHeader } from 'redux/auth/authOperations';
+import css from './Layout.module.css';
 
 export const Layout = () => {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+  const name = useSelector(state => state.auth.user.name);
+
+  const handleLogout = () => {
+    dispatch(LogOut());
+    clearAuthHeader();
+  };
+
   return (
     <div>
       <Toaster position="top-left" reverseOrder={true} />
-      <nav>
+      <nav className={css.navigation}>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/register">Register</NavLink>
-        <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/contacts">Contacts</NavLink>
-        <NavLink to="/logout">Log out</NavLink>
+        {!isLoggedIn ? (
+          <>
+            <NavLink to="/register">
+              <button> Register</button>
+            </NavLink>
+            <NavLink to="/login">
+              <button>Log In</button>
+            </NavLink>
+          </>
+        ) : (
+          <>
+            <p>Hello,{name}</p>
+            <NavLink to="/contacts">
+              <button type="button">Contacts</button>
+            </NavLink>{' '}
+            <button type="button" onClick={handleLogout}>
+              Log out
+            </button>
+          </>
+        )}
       </nav>
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />

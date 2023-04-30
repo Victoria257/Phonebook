@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { register } from 'redux/auth/authOperations';
+import css from './Register.module.css';
 
 export const Register = () => {
   const [name, setName] = useState('');
@@ -8,6 +9,8 @@ export const Register = () => {
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
+
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
   const handleChange = event => {
     const { name, value } = event.currentTarget;
@@ -32,12 +35,17 @@ export const Register = () => {
     dispatch(register({ name, email, password }));
   };
 
-  return (
+  return isLoggedIn ? (
     <div>
-      <form onSubmit={handleSubmit}>
+      <div>Привіт, {name}!</div>
+    </div>
+  ) : (
+    <div>
+      <form onSubmit={handleSubmit} className={css.form}>
         <label>
           Username
           <input
+            className={css.name}
             type="text"
             name="name"
             value={name}
@@ -50,6 +58,7 @@ export const Register = () => {
         <label>
           Email
           <input
+            className={css.email}
             type="email"
             name="email"
             value={email}
@@ -62,6 +71,7 @@ export const Register = () => {
         <label>
           Password
           <input
+            className={css.password}
             type="text"
             name="password"
             value={password}
