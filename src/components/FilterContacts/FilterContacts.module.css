@@ -1,5 +1,10 @@
 .filter {
   padding-left: 25px;
+  margin-left: 20px;
+  padding: 20px;
+  border: solid 2px rgb(37, 39, 39);
+  border-radius: 5px;
+  background-color: rgb(143, 184, 184);
 }
 
 .filterInput {

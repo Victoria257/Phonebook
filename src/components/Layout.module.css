@@ -3,6 +3,8 @@
   gap: 20px;
   align-items: center;
   margin-bottom: 20px;
+  border-bottom: 2px solid rgb(42, 41, 41);
+  padding: 10px 30px 20px;
 }
 
 .navigation a {

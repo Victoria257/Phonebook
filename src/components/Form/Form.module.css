@@ -1,5 +1,8 @@
 .formWrapper {
-  outline: solid rgb(151, 176, 176);
+  border: solid 2px rgb(37, 39, 39);
+  border-radius: 5px;
+  padding: 20px;
+  background-color: rgb(147, 180, 180);
 }
 
 .form {
@@ -28,4 +31,5 @@
   border-radius: 5px;
   border: solid 1px rgb(37, 39, 39);
   background-color: rgb(98, 172, 172);
+  cursor: pointer;
 }

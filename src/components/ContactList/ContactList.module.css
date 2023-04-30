@@ -1,7 +1,17 @@
+.container {
+  border: 1px solid rgb(76, 72, 72);
+  border-radius: 5px;
+  padding: 20px 25px 0 0;
+  background-color: rgb(147, 180, 180);
+}
+
+.title {
+  margin-left: 25px;
+}
+
 .contactsList {
   display: inline-flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
   padding-left: 15px;
+  margin-top: 40 px;
 }

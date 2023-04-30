@@ -41,6 +41,7 @@ export const Register = () => {
     </div>
   ) : (
     <div>
+      <h2 className={css.title}>Register:</h2>
       <form onSubmit={handleSubmit} className={css.form}>
         <label>
           Username

@@ -18,9 +18,14 @@ export const Contact = () => {
 
   return visibleContacts.map(({ name, number, id }) => (
     <li className={css.contact} key={id}>
-      <p className={css.spans}>
-        <span>{name}</span> <span>{number}</span>
-      </p>
+      <ul className={css.list}>
+        <li>{name}</li>
+        <li>
+          <a href={number} target="_blank">
+            {number}
+          </a>
+        </li>
+      </ul>
 
       <button
         className={css.delButton}

@@ -15,8 +15,6 @@ const statusFulfilled = (state, { payload }) => {
   state.token = payload.token;
   state.isLoading = false;
   state.isLoggedIn = true;
-  console.log(state.user);
-  console.log(payload);
 };
 
 const authSlice = createSlice({

@@ -37,6 +37,7 @@ export const Login = () => {
     </div>
   ) : (
     <div>
+      <h2 className={css.title}>log in to your account:</h2>
       <form onSubmit={handleSubmit} className={css.loginForm}>
         <label>
           Email
