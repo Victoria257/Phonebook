@@ -1,6 +1,6 @@
 import css from './Home.module.css';
 
-export const Home = () => {
+const Home = () => {
   return (
     <div className={css.home}>
       <h1>Hello, this is your phone book.</h1>
@@ -13,3 +13,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

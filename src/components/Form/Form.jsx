@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import css from './Form.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from 'redux/operations';
+import { toast } from 'react-hot-toast';
 
 export function Form() {
   const [name, setName] = useState('');
@@ -35,7 +36,7 @@ export function Form() {
         contact.name.includes(event.target.name.value)
       )
     ) {
-      alert(`${name} is already in contacts`);
+      toast.error(`${name} is already in contacts`);
       return;
     } else {
       dispatch(addContacts({ name: nameNew, number: numberNew }));
@@ -60,7 +61,6 @@ export function Form() {
             name="name"
             value={name}
             onChange={handleChange}
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />

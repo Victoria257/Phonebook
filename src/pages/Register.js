@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from 'redux/auth/authOperations';
 import css from './Register.module.css';
+import { toast } from 'react-hot-toast';
 
-export const Register = () => {
+const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,12 +33,17 @@ export const Register = () => {
   const handleSubmit = event => {
     event.preventDefault();
     console.log(event.currentTarget);
-    dispatch(register({ name, email, password }));
+    dispatch(register({ name, email, password }))
+      .unwrap()
+      .then(toast.success(`user ${name} add`))
+      .catch(() =>
+        toast.error('Incorrectly entered login or password or name')
+      );
   };
 
   return isLoggedIn ? (
     <div>
-      <div>Привіт, {name}!</div>
+      <div>Welcome, {name}!</div>
     </div>
   ) : (
     <div>
@@ -64,7 +70,7 @@ export const Register = () => {
             name="email"
             value={email}
             onChange={handleChange}
-            // pattern="^[a-zA-Zа-яА-Я]+(([@][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            pattern="^[a-zA-Zа-яА-Я0-9._%+-]+@[a-zA-Zа-яА-Я0-9.-]+\.[a-zA-Zа-яА-Я]{2,}$"
             title="Name may contain only letters and @."
             required
           />
@@ -77,7 +83,8 @@ export const Register = () => {
             name="password"
             value={password}
             onChange={handleChange}
-            // pattern="^[0-9]*"
+            pattern=".{7,}"
+            placeholder="min 7 symbols"
             title="Name may contain only letters, numbers and #$%-_."
             required
           />
@@ -87,3 +94,5 @@ export const Register = () => {
     </div>
   );
 };
+
+export default Register;

@@ -1,37 +1,10 @@
 .contact {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
   padding-left: 5px;
-  margin: 0;
+  list-style: none;
+  width: 450px;
 }
 
 .list {
-  width: 300px;
-  margin: 0px;
-  padding: 0 20px;
-  border: solid 1px rgb(98, 172, 172);
-  border-radius: 5px;
-  background-color: rgb(217, 225, 225);
-  list-style: none;
-}
-
-.list li {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  letter-spacing: 0.01em;
-}
-
-.list li a {
-  text-decoration: none;
-  color: currentColor;
-}
-
-.delButton {
-  padding: 0 30px;
-  border: solid 1px rgb(98, 172, 172);
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: rgb(164, 198, 198);
+  margin: 0;
+  width: 100%;
 }

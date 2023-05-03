@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
 import css from './PageContacts.module.css';
 
-export const Contacts = () => {
+const Contacts = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
@@ -26,3 +26,5 @@ export const Contacts = () => {
     </div>
   );
 };
+
+export default Contacts;

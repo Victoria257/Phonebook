@@ -17,17 +17,23 @@ export const Layout = () => {
 
   return (
     <div>
-      <Toaster position="top-left" reverseOrder={true} />
+      <Toaster position="top-center" reverseOrder={true} />
       <nav className={css.navigation}>
         <NavLink to="/">Home</NavLink>
         {!isLoggedIn ? (
           <>
-            <NavLink to="/register">
+            {/* <NavLink to="/register">
               <button> Register</button>
+            </NavLink> */}
+            <NavLink to="/signUp">
+              <button> SignUp</button>
             </NavLink>
-            <NavLink to="/login">
+            <NavLink to="/signIn">
+              <button> SignIn</button>
+            </NavLink>
+            {/* <NavLink to="/login">
               <button>Log In</button>
-            </NavLink>
+            </NavLink> */}
           </>
         ) : (
           <>

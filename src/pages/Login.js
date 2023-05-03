@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logIn } from 'redux/auth/authOperations';
 import css from './Login.module.css';
+import { toast } from 'react-hot-toast';
 
-export const Login = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -28,7 +29,10 @@ export const Login = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(logIn({ email, password }));
+    dispatch(logIn({ email, password }))
+      .unwrap()
+      .then(data => console.log(data))
+      .catch(() => toast.error('Incorrectly entered login or password'));
   };
 
   return isLoggedIn ? (
@@ -47,7 +51,7 @@ export const Login = () => {
             name="email"
             value={email}
             onChange={handleChange}
-            // pattern="^[a-zA-Zа-яА-Я]+(([@][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
             title="Name may contain only letters and @."
             required
           />
@@ -60,7 +64,7 @@ export const Login = () => {
             name="password"
             value={password}
             onChange={handleChange}
-            // pattern="^[a-zA-Zа-яА-Я]+[#$%-_.]+#$%-_]?[0-9]*)*$"
+            pattern=".{7,}"
             title="Name may contain only letters, numbers and #$%-_."
             required
           />
@@ -70,3 +74,5 @@ export const Login = () => {
     </div>
   );
 };
+
+export default Login;

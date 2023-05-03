@@ -10,7 +10,7 @@
   flex-direction: column;
   gap: 30px;
   padding: 10px 80px 10px 10px;
-  border: solid 2px rgb(37, 39, 39);
+  border: solid 2px #252727;
   border-radius: 5px;
 }
 
@@ -22,7 +22,7 @@
 .formInput {
   border-radius: 3px;
   border: solid 1px rgb(37, 39, 39);
-  padding: 5px 0;
+  padding: 7px 5px;
 }
 
 .formBtn {
