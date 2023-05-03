@@ -11,7 +11,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logIn } from 'redux/auth/authOperations';
 import { toast } from 'react-hot-toast';
@@ -64,9 +63,6 @@ const theme = createTheme({
 });
 
 export default function SignIn() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
   const loggedName = useSelector(state => state.auth.user.name);
 
