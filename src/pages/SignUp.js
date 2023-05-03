@@ -63,20 +63,27 @@ export default function SignUp() {
   const handleSubmit = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    const name = data.get('firstName');
+    const email = data.get('email');
+    const password = data.get('password');
+
     dispatch(
       register({
-        name: data.get('firstName'),
-        email: data.get('email'),
-        password: data.get('password'),
+        name,
+        email,
+        password,
       })
     )
       .unwrap()
-      .then(toast.success(`user ${name} add`))
+      .then(res => {
+        console.log(res);
+        toast.success(`user ${name} add`);
+      })
       .catch(() =>
         toast.error('Incorrectly entered login or password or name')
       );
 
-    setName(data.get('firstName'));
+    setName(name);
     // console.log({
     //   email: data.get('email'),
     //   password: data.get('password'),
