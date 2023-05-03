@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[151],{3151:function(e,t,c){c.r(t),c.d(t,{default:function(){return n}});var o={},a=c(3329),n=function(){return(0,a.jsxs)("div",{className:o.home,children:[(0,a.jsx)("h1",{children:"Hello, this is your phone book."}),(0,a.jsx)("p",{children:"You can add contacts, delate contacts , and filter contacts from name."}),(0,a.jsx)("p",{children:"We save your contacts. You have access to your contacts from anywhere."})]})}}}]);
+//# sourceMappingURL=151.c6ece6fc.chunk.js.map
