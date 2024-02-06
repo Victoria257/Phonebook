@@ -1,9 +1,15 @@
 .formWrapper {
   border: 1px solid rgb(76, 72, 72);
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 20px;
   background-color: rgb(235, 241, 232);
   height: fit-content;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: calc((100% - 70px) / 2);
+    box-sizing: border-box;
+    max-width: 400px;
+  }
 
   @media screen and (max-width: 767px) {
     width: 100%;
@@ -27,6 +33,7 @@
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     padding: 10px;
+    display: flex;
   }
 
   @media screen and (max-width: 767px) {

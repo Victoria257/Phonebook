@@ -5,7 +5,7 @@
   /* outline: solid orange 3px; */
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    width: 300px;
+    /* outline: solid orange 3px; */
   }
 
   @media screen and (max-width: 767px) {

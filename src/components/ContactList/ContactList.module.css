@@ -1,11 +1,14 @@
 .container {
   border: 1px solid rgb(76, 72, 72);
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 20px 25px 0 0;
   background-color: rgb(235, 241, 232);
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     padding: 20px 25px 0 0;
+    width: calc((100% - 70px) / 2);
+    box-sizing: border-box;
+    max-width: 500px;
   }
 
   @media screen and (max-width: 767px) {
@@ -31,6 +34,10 @@
   border: solid 2px rgb(37, 39, 39);
   border-radius: 5px;
   overflow: hidden;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 95%;
+  }
 
   @media screen and (max-width: 767px) {
     display: flex;

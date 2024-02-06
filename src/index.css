@@ -1,6 +1,8 @@
 @import-normalize; /* bring in normalize.css styles */
 
 body {
+  min-height: 100vh;
+  height: 100%;
   padding: 50px;
   background-color: rgb(151, 176, 176);
   background-image: url('../assets/dream_TradingCard\ \(13\).jpg');
@@ -15,6 +17,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     padding: 20px;
   }
