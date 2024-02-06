@@ -1,7 +1,16 @@
 .contact {
-  padding-left: 5px;
   list-style: none;
+  margin: 0;
   width: 450px;
+  /* outline: solid orange 3px; */
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
 }
 
 .list {

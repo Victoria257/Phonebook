@@ -51,7 +51,7 @@ export function Form() {
 
   return (
     <div className={css.formWrapper}>
-      <h2>Phonebook</h2>
+      <h2 className={css.formTitle}>Phonebook</h2>
       <form className={css.form} onSubmit={handleSubmit}>
         <label className={css.formLable}>
           Name

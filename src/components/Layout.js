@@ -19,31 +19,31 @@ export const Layout = () => {
     <div>
       <Toaster position="top-center" reverseOrder={true} />
       <nav className={css.navigation}>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/">
+          <span className={css.navigationHome}>Home</span>
+        </NavLink>
         {!isLoggedIn ? (
           <>
-            {/* <NavLink to="/register">
-              <button> Register</button>
-            </NavLink> */}
+  
             <NavLink to="/signUp">
               <button> SignUp</button>
             </NavLink>
             <NavLink to="/signIn">
               <button> SignIn</button>
             </NavLink>
-            {/* <NavLink to="/login">
-              <button>Log In</button>
-            </NavLink> */}
+
           </>
         ) : (
           <>
-            <p>Hello,{name}</p>
-            <NavLink to="/contacts">
-              <button type="button">Contacts</button>
-            </NavLink>{' '}
-            <button type="button" onClick={handleLogout}>
-              Log out
-            </button>
+            <p className={css.navigationName}>Hello,{name}</p>
+            <div>
+              <NavLink to="/contacts">
+                <button type="button">Contacts</button>
+              </NavLink>{' '}
+              <button type="button" onClick={handleLogout}>
+                Log out
+              </button>
+            </div>
           </>
         )}
       </nav>

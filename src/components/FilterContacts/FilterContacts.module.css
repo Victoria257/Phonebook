@@ -1,10 +1,13 @@
 .filter {
-  padding-left: 25px;
-  margin-left: 20px;
+  margin-left: 25px;
+  margin-top: 10px;
   padding: 20px;
   border: solid 2px rgb(37, 39, 39);
   border-radius: 5px;
-  background-color: rgb(143, 184, 184);
+
+  @media screen and (max-width: 767px) {
+    padding: 0 20px 20px 20px;
+  }
 }
 
 .filterInput {
@@ -12,6 +15,14 @@
   border: solid 1px rgb(37, 39, 39);
   padding: 10px 5px;
   width: 340px;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 240px;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 95%;
+  }
 }
 
 .filterInput::placeholder {

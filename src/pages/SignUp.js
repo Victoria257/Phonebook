@@ -14,9 +14,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from 'redux/auth/authOperations';
-// import css from './Register.module.css';
 import { toast } from 'react-hot-toast';
 import { NavLink } from 'react-router-dom';
+
+import css from './SignInAndSignUp.module.css';
 
 function Copyright(props) {
   return (
@@ -31,7 +32,7 @@ function Copyright(props) {
         color="inherit"
         href="http://localhost:3000/goit-react-hw-08-phonebook"
       >
-        Your Website
+        Your phonebook
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -44,6 +45,7 @@ const theme = createTheme({
     MuiContainer: {
       styleOverrides: {
         root: {
+          backgroundColor: 'rgb(235, 241, 232)',
           border: 'solid 1px 	#0000FF',
           padding: '5px',
           borderRadius: '10px',
@@ -97,7 +99,7 @@ export default function SignUp() {
     </div>
   ) : (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" className={css.container}>
         <CssBaseline />
         <Box
           sx={{
@@ -106,8 +108,12 @@ export default function SignUp() {
             flexDirection: 'column',
             alignItems: 'center',
           }}
+          className={css.box}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar
+            sx={{ m: 1, bgcolor: 'secondary.main' }}
+            className={css.avatar}
+          >
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">

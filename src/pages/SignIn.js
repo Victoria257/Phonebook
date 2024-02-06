@@ -16,6 +16,8 @@ import { logIn } from 'redux/auth/authOperations';
 import { toast } from 'react-hot-toast';
 import { NavLink } from 'react-router-dom';
 
+import css from './SignInAndSignUp.module.css';
+
 function Copyright(props) {
   return (
     <Typography
@@ -29,7 +31,7 @@ function Copyright(props) {
         color="inherit"
         href="http://localhost:3000/goit-react-hw-08-phonebook"
       >
-        Your Website
+        Your phonebook
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -42,23 +44,13 @@ const theme = createTheme({
     MuiContainer: {
       styleOverrides: {
         root: {
-          // backgroundColor: '#dae5e8',
+          backgroundColor: 'rgb(235, 241, 232)',
           border: 'solid 1px 	#0000FF',
           padding: '5px',
           borderRadius: '10px',
         },
       },
     },
-    //   MuiButton: {
-    //     styleOverrides: {
-    //       root: {
-    //         backgroundColor: '#689494',
-    //         border: 'solid 1px #0a0a0a',
-    //         borderRadius: '5px',
-    //         color: '#0a0a0a',
-    //       },
-    //     },
-    //   },
   },
 });
 
@@ -89,7 +81,7 @@ export default function SignIn() {
     </div>
   ) : (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" className={css.container}>
         <CssBaseline />
         <Box
           sx={{
@@ -98,8 +90,12 @@ export default function SignIn() {
             flexDirection: 'column',
             alignItems: 'center',
           }}
+          className={css.box}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar
+            sx={{ m: 1, bgcolor: 'secondary.main' }}
+            className={css.avatar}
+          >
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
