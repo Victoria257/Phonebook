@@ -23,26 +23,26 @@ export const Layout = () => {
           <span className={css.navigationHome}>Home</span>
         </NavLink>
         {!isLoggedIn ? (
-          <>
-  
+          <div className={css.logOutContainer}>
             <NavLink to="/signUp">
               <button> SignUp</button>
             </NavLink>
             <NavLink to="/signIn">
               <button> SignIn</button>
             </NavLink>
-
-          </>
+          </div>
         ) : (
           <>
-            <p className={css.navigationName}>Hello,{name}</p>
-            <div>
-              <NavLink to="/contacts">
-                <button type="button">Contacts</button>
-              </NavLink>{' '}
-              <button type="button" onClick={handleLogout}>
-                Log out
-              </button>
+            <div className={css.isLoggedContainer}>
+              <p className={css.navigationName}>Hello,{name}</p>
+              <div className={css.isLoggedWrapper}>
+                <NavLink to="/contacts">
+                  <button type="button">Contacts</button>
+                </NavLink>
+                <button type="button" onClick={handleLogout}>
+                  Log out
+                </button>
+              </div>
             </div>
           </>
         )}
@@ -53,31 +53,3 @@ export const Layout = () => {
     </div>
   );
 };
-
-/* //  <header className={css.header}>
-//    <nav>
-//      <NavLink className={css.link} to="/">
-//        Home
-//      </NavLink>
-//      {isLoggedIn && ( */
-
-/* //        <NavLink className={css.link} to="/tasks">
-//          Tasks
-//        </NavLink>
-//      )}
-//    </nav>
-//    <div className={css.wrapper}>
-//      <p className={css.username}>Welcome, {user.name}</p>
-//      <button type="button" onClick={() => dispatch(logOut())}>
-//        Logout
-//      </button>
-//    </div>{' '}
-//    <div>
-//      <NavLink className={css.link} to="/register">
-//        Register
-//      </NavLink>
-//      <NavLink className={css.link} to="/login">
-//        Log In
-//      </NavLink>
-//    </div>
-//  </header>; */

@@ -8,11 +8,12 @@
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: calc((100% - 70px) / 2);
     box-sizing: border-box;
-    max-width: 400px;
+    max-width: 350px;
   }
 
   @media screen and (max-width: 767px) {
     width: 100%;
+    max-width: 350px;
   }
 }
 
@@ -31,6 +32,9 @@
   border-radius: 5px;
   margin-top: 10px;
 
+  @media screen and (min-width: 1280px) {
+    width: 300px;
+  }
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     padding: 10px;
     display: flex;
