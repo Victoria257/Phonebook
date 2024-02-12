@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.55e7f62d.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.9c011e8b.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.67c842e8.js",
     "static/css/151.c4a3a7ce.chunk.css": "/goit-react-hw-08-phonebook/static/css/151.c4a3a7ce.chunk.css",
     "static/js/151.450e00ad.chunk.js": "/goit-react-hw-08-phonebook/static/js/151.450e00ad.chunk.js",
     "static/css/713.213977a4.chunk.css": "/goit-react-hw-08-phonebook/static/css/713.213977a4.chunk.css",
@@ -15,7 +15,7 @@
     "static/media/dream_TradingCard (13).jpg": "/goit-react-hw-08-phonebook/static/media/dream_TradingCard (13).713fe698f8a3e27f0c07.jpg",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.55e7f62d.css.map": "/goit-react-hw-08-phonebook/static/css/main.55e7f62d.css.map",
-    "main.9c011e8b.js.map": "/goit-react-hw-08-phonebook/static/js/main.9c011e8b.js.map",
+    "main.67c842e8.js.map": "/goit-react-hw-08-phonebook/static/js/main.67c842e8.js.map",
     "151.c4a3a7ce.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/151.c4a3a7ce.chunk.css.map",
     "151.450e00ad.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/151.450e00ad.chunk.js.map",
     "713.213977a4.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/713.213977a4.chunk.css.map",
@@ -29,6 +29,6 @@
   },
   "entrypoints": [
     "static/css/main.55e7f62d.css",
-    "static/js/main.9c011e8b.js"
+    "static/js/main.67c842e8.js"
   ]
 }
