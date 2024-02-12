@@ -1,17 +1,18 @@
-import css from 'components/Contact/Contact.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { delContact } from 'redux/operations';
-
 import * as React from 'react';
+
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
+// import ListItemAvatar from '@mui/material/ListItemAvatar';
+import PhoneEnabledRoundedIcon from '@mui/icons-material/PhoneEnabledRounded';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
+
+import css from './Contact.module.css';
 
 export const Contact = () => {
   const contacts = useSelector(state => state.contacts.contacts.items);
@@ -27,6 +28,15 @@ export const Contact = () => {
 
   const visibleContacts = getVisibleContacts();
 
+  const styles = {
+    iconButton: {
+      transition: 'background-color 0.3s',
+      '&:hover': {
+        backgroundColor: 'rgb(32, 220, 220)',
+      },
+    },
+  };
+
   return visibleContacts.map(({ name, number, id }) => (
     <li className={css.contact} key={id}>
       <List
@@ -36,10 +46,17 @@ export const Contact = () => {
           bgcolor: 'background.paper',
         }}
       >
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt={name} src="/static/images/avatar/1.jpg" />
-          </ListItemAvatar>
+        <ListItem alignItems="center">
+          <IconButton
+            color="primary"
+            sx={styles.iconButton}
+            aria-label={`Call by number ${number}`}
+            type="phone"
+            href={`tel: ${number}`}
+          >
+            <PhoneEnabledRoundedIcon />
+          </IconButton>
+
           <ListItemText
             primary={name}
             secondary={
@@ -56,7 +73,6 @@ export const Contact = () => {
             }
           />
           <IconButton
-            edge="end"
             aria-label="delete"
             onClick={() => dispatch(delContact(id))}
           >
@@ -68,6 +84,8 @@ export const Contact = () => {
       </List>
     </li>
 
+    //without material
+    //
     //   <ul className={css.list}>
     //     <li>{name}</li>
     //     <li>

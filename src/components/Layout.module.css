@@ -50,6 +50,8 @@
   font-size: 30px;
   font-weight: 500;
   font-family: 'Protest Riot', sans-serif;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+    1px 1px 0 white;
 
   @media screen and (max-width: 767px) {
     font-size: 20px;

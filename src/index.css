@@ -7,7 +7,8 @@ body {
   background-color: rgb(151, 176, 176);
   background-image: url('../assets/dream_TradingCard\ \(13\).jpg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position-x: center;
+  background-position-y: -100px;
   background-size: cover;
   color: rgb(53, 51, 56);
 
