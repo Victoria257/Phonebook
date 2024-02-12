@@ -34,7 +34,7 @@ export const Layout = () => {
         ) : (
           <>
             <div className={css.isLoggedContainer}>
-              <p className={css.navigationName}>Hello,{name}</p>
+              <p className={css.navigationName}>Hello, {name}</p>
               <div className={css.isLoggedWrapper}>
                 <NavLink to="/contacts">
                   <button type="button">Contacts</button>
