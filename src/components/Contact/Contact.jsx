@@ -29,10 +29,17 @@ export const Contact = () => {
   const visibleContacts = getVisibleContacts();
 
   const styles = {
-    iconButton: {
+    iconButtonCall: {
       transition: 'background-color 0.3s',
       '&:hover': {
-        backgroundColor: 'rgb(32, 220, 220)',
+        backgroundColor: 'rgb(71, 179, 238)',
+      },
+    },
+
+    iconButtonDel: {
+      transition: 'color 0.3s',
+      '&:hover': {
+        color: 'rgb(238, 54, 26)',
       },
     },
   };
@@ -49,7 +56,7 @@ export const Contact = () => {
         <ListItem alignItems="center">
           <IconButton
             color="primary"
-            sx={styles.iconButton}
+            sx={styles.iconButtonCall}
             aria-label={`Call by number ${number}`}
             type="phone"
             href={`tel: ${number}`}
@@ -74,6 +81,7 @@ export const Contact = () => {
           />
           <IconButton
             aria-label="delete"
+            sx={styles.iconButtonDel}
             onClick={() => dispatch(delContact(id))}
           >
             <DeleteIcon />

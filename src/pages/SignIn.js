@@ -67,7 +67,7 @@ export default function SignIn() {
       logIn({ email: data.get('email'), password: data.get('password') })
     )
       .unwrap()
-      .then(data => console.log(data))
+      // .then(data => console.log(data))
       .catch(() => toast.error('Incorrectly entered login or password'));
     // console.log({
     //   email: data.get('email'),
