@@ -32,7 +32,7 @@ export const addContacts = createAsyncThunk(
   async ({ name, number }, thunkAPI) => {
     try {
       const response = await axios.post(`/contacts`, { name, number });
-      // setAuthHeader(response.data.token);
+  
       toast.success('Add contact');
       return await response.data;
     } catch (error) {

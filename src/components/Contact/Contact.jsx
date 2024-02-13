@@ -91,24 +91,5 @@ export const Contact = () => {
         <Divider variant="inset" component="li" />
       </List>
     </li>
-
-    //without material
-    //
-    //   <ul className={css.list}>
-    //     <li>{name}</li>
-    //     <li>
-    //       <a href={number} target="_blank" rel="noreferrer">
-    //         {number}
-    //       </a>
-    //     </li>
-    //   </ul>
-
-    //   <button
-    //     className={css.delButton}
-    //     type="button"
-    //     onClick={() => dispatch(delContact(id))}
-    //   >
-    //     delete
-    //   </button>
   ));
 };

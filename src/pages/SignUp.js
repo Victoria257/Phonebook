@@ -86,11 +86,7 @@ export default function SignUp() {
       );
 
     setName(name);
-    // console.log({
-    //   email: data.get('email'),
-    //   password: data.get('password'),
-    //   firstName: data.get('firstName'),
-    // });
+
   };
 
   return isLoggedIn ? (

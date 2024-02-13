@@ -10,7 +10,6 @@ const setAuthHeader = token => {
 export const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = '';
 };
-// const URL = 'https://connections-api.herokuapp.com';
 
 export const register = createAsyncThunk('auth/register', async credentials => {
   console.log(credentials);

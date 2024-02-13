@@ -14,14 +14,13 @@ const Contacts = () => {
     isLoggedIn && dispatch(fetchContacts());
   }, [isLoggedIn, dispatch]);
 
-  // const isLoading = state => state.contacts.isLoading;
-  // const error = state => state.contacts.error;
+
   return (
     <div className={css.container}>
       <Form />
       <ContactList>
         <FilterContacts />
-        {/* {isLoading && !error && <b>Request in progress...</b>} */}
+  
       </ContactList>
     </div>
   );

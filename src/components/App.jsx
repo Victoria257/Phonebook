@@ -9,7 +9,6 @@ import { Layout } from './Layout';
 const Home = lazy(() => import('pages/Home'));
 const SignUp = lazy(() => import('pages/SignUp'));
 const SignIn = lazy(() => import('pages/SignIn'));
-// const Login = lazy(() => import('pages/Login'));
 const Contacts = lazy(() => import('pages/PageContacts'));
 
 function App() {
