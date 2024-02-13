@@ -1,5 +1,5 @@
 import { Toaster } from 'react-hot-toast';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { LogOut, clearAuthHeader } from 'redux/auth/authOperations';
@@ -9,6 +9,7 @@ export const Layout = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
   const name = useSelector(state => state.auth.user.name);
+  const location = useLocation();
 
   const handleLogout = () => {
     dispatch(LogOut());
@@ -20,8 +21,17 @@ export const Layout = () => {
       <Toaster position="top-center" reverseOrder={true} />
       <nav className={css.navigation}>
         <NavLink to="/">
-          <span className={css.navigationHome}>Home</span>
+          <span
+            className={
+              location.pathname !== '/'
+                ? css.navigationHome
+                : css.navigationHomeActive
+            }
+          >
+            Home
+          </span>
         </NavLink>
+
         {!isLoggedIn ? (
           <div className={css.logOutContainer}>
             <NavLink to="/signUp">
@@ -36,9 +46,11 @@ export const Layout = () => {
             <div className={css.isLoggedContainer}>
               <p className={css.navigationName}>Hello, {name}</p>
               <div className={css.isLoggedWrapper}>
-                <NavLink to="/contacts">
-                  <button type="button">Contacts</button>
-                </NavLink>
+                {location.pathname !== '/contacts' && (
+                  <NavLink to="/contacts">
+                    <button type="button">Contacts</button>
+                  </NavLink>
+                )}
                 <button type="button" onClick={handleLogout}>
                   Log out
                 </button>

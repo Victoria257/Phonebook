@@ -28,6 +28,10 @@
   }
 }
 
+.navigationHomeActive {
+  display: none;
+}
+
 .navigation button {
   padding: 7px 0;
   width: 140px;
