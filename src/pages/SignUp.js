@@ -30,7 +30,7 @@ function Copyright(props) {
       {'Copyright © '}
       <Link
         color="inherit"
-        href="http://localhost:3000/goit-react-hw-08-phonebook"
+        href="https://victoria257.github.io/Phonebook/"
       >
         Your phonebook
       </Link>{' '}
